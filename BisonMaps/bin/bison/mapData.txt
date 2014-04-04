@@ -1,0 +1,113 @@
+0 20-Crarrton Auditorium 
+1 9-Greene Memorial Stadium  
+2 43-Ira Aldridge Theater
+3 10-School of Business
+4 14-Miner Hall
+5 28-Children Hall (Fine Arts)
+6 57-Blackburn Center
+7 24-Center for Academic Reinforcement
+8 25-School of Education
+9 44-Locke Hall
+10 40-Middle School
+11 29-Founders Libray _ MSRC
+12 18-Cook Hall
+13 96-Howard Manor
+14 92-Effingham Apartments
+15 8-burr gymnasium
+16 21-Drew Hall
+17 1-MJ Building (Administration)
+18 33-Howard Hall 
+19 53-Lindsay Hall (Social Work)
+20 23-Douglass Hall
+21 12-Carneigi Hall
+22 61-Founders Library
+23 50-Rankin Chapel
+24 55-Thirdeld Hall (Physics)
+25 15-Chemistry Building
+26 7-Just Hall (Biology)
+27 47-School of Pharmacy  
+28 31-Graduate School
+29 4-Laser Chemistry Building
+30 54-WHUT-TV
+31 6-Bethune Annex
+32 62F-Frazier Hall
+33 62C-Crandall Hall
+34 62T-Truth Hall
+35 62W-Wheatley Hall
+36 62B-Baldwin Hall
+37 13-CB Powell Building
+38 WHUR Radio Building  49 
+39 700- Mental Health Center
+40 Downing Hall 26 
+41 3- Mackey Building (Archeiticture)
+42 42- Ralph J Bunche Center
+43 48- Power Plant
+44 ISAS 
+45 ILAB  
+46 200- Health Science Library
+47 11- School of Nursing
+48 5 - Howard Bookstore
+49 Howad Plaza Tower (East) 550 
+50 Howard Plaza Tower (West) 551 
+51 39 - Howard Service Center
+52 75 - Hospital Service Center
+53 63 - Student Health Center
+54 22 - Dixon Building (College of Dentistry)
+55 45 - College of Medicine
+56 51 - Numa Adams Building
+57 37 - Howard University Hospital
+58 left corner of 4th st NW and college st NW
+59 right corner of 4th st NW and college st NW
+60 left corner of Bryant st NW and 4th st NW
+61 right corner of Bryant st NW and 4th st NW
+62 right corner of 6th st NW and College st NW
+63 right corner of 6th st NW and Bryant st NW
+64 left corner of 6th st NW and Bryant st NW
+65 Georgia Ave NW & Bryant st
+66 6th st NW and W st NW
+67 Georgia Ave NW & W st NW  
+68 Georgia Ave NW & V st NW 
+69 5th st NW and W st NW 
+70 4th st NW & W st NW
+71 4th st NW & V st NW
+72 4th st NW & Oakdale Pl
+73 V st NW & 8th st NW
+74 V st NW & 9th st NW
+75 Sherman Ave NW & Barry Pl
+76 Sherman Ave NW & 9th ST NW
+77 9th St NW & Euclid St NW 
+78 Sherman Ave NW & Fairmont St NW
+79 Fairmont Ave NW & Georgia Ave NW 
+80 Fairmont Ave NW & Girard St NW
+81 Fairmonth Ave NW & 6th St NW
+82 6th St NW & Georgia Ave NW
+83 Path infront of Steel Statue that looks like an Alien
+84 Howard Clock Tower
+85 Howar Pl NW & 6th St
+86 Howar Pl NW & 4th St
+88 Circle infront of Clock Tower
+89 Georgia Ave NW & Euclid St NW
+90 Howard Pl NW & Georgia Ave NW
+91 8th St NW & W St NW
+92 Parking Lot on Georgia Ave NW Near Howard University Hospital
+93 Howard Univesity Hospital
+94 8th St NW parking Lot infront of Howard -Plaza Tower East
+95 6th St NW parking Lot infront of Howard Plaza Tower East
+96 Sherman Ave NW near Howard Plaza Tower West
+97 Bryant Ave infront of WHUR Radio Building
+98 Circle near Louis Stokes Health Sciences Library
+99 6th St NW & Howard Pl NW
+100 Howard Pl NW infront of Founder Library
+101 6th St infront of MJ Building (Administration)
+102  Gresham Pl NW & 5th St
+103  Harvard St & 5th St NW
+104   Girard St NW & 6th St NW
+105   Girard St NW & Georgia Ave NW
+106  abstract fountain
+107  5th st infront of building 9 (Greene Memorial Stadium)
+108  5th st NW & Oakdale Pl NW
+109  Barry Pl NW & 9th St
+110  Barry Pl & 10th St NW
+111   title porch infront of 62B-Baldwin Hall
+112   path infront of 62W-Wheatley Hall on Howard Pl NW intersection with 4th St NW
+113 lubman Quaderangel in the middle circle around 62 buildings
