@@ -29,6 +29,9 @@ public class BisonMaps {
             int d = StdIn.readInt();
             dijkstra.showPath(s, d);
             System.out.println();
+            
+            System.out.println("Distance to location:  " + dijkstra.distance(s, d));
+            
         }
     }
 }
