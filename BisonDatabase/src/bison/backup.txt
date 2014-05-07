@@ -1,0 +1,158 @@
+package bison;
+/*************************************************************************
+ *  Compilation:  javac BisonMaps.java
+ *  Execution:    java BisonMaps mapfile < input.txt
+ *  Dependencies: EuclideanGraph.java Dijkstra.java In.java StdIn.java
+ *
+ *  Reads in a map from a file, and repeatedly reads in two integers s
+ *  and d from standard input, and prints the shortest path from s
+ *  to d to standard output.
+ *
+ *
+ ****************************************************************************/
+
+
+public class BisonMaps {
+
+    public static void main(String[] args) 
+    {
+    	//public static int EXIT = 6;
+        // read in the graph from a file
+        /*In graphin = new In(args[0]);*/
+    	//System.out.println("Bison Map");
+    	//public void DoIt()(int op
+    	 int option;
+  
+		//while (true) {
+	        System.out.println("Enter 1-6: \n");
+	        System.out.println("(1): Option 1 - Get Directions\n(2): Option 2 -  Find Campus Resources\n(3): Option 3 - Display Campus Building Names\n(4): Option 4 - Display all Campus Resources\n(5): Option 5 - Display all Department Locations\n(6): Exit");
+	        option = StdIn.readInt();
+	       // option = getResponse();
+
+	        if (option == 6) {
+	        	System.out.println("hiiiiii"+option);
+	            System.exit(1);
+	        }
+
+
+	        switch (option) {
+
+	        case 1:{
+
+	            //while (true) {
+	       
+	        System.out.println("Enter Starting Location (Building):\n");
+	        int startingPoint= StdIn.readInt();
+	        System.out.println("Enter Destination Location (Building):\n");
+	        int endinPointPoint= StdIn.readInt();
+	        break;
+	        }
+
+
+	        switch (option) {
+
+	        case 2:
+
+	            //while (true) {
+                    
+	            	System.out.println("Choose which Sort type to use\n");
+	    	        System.out.println("(1): Option 1 - ATM\n(2): Option 2 - Public Phone\n(3): Option 3 - WiFi Hot Spot\n(4): Option 4 - Security Phone/Guard Station\n(5): Option 5 - Vending Machine\n(6): Option 6 - Rest Room\n(7): Option 7 - Shuttle Bus Stop\n(8) Option 8 - Computer Lab\n(9) Previous Menu");
+	    	        System.out.println("Enter Origin Location(building): " );
+	    	        option = StdIn.readInt();
+	    	        if (option == 9) {
+	    	            System.exit(0);
+	    	        }
+	        }
+	    	        
+	           // }
+
+/*
+	            switch (option) 
+	            {
+
+	            case 1:
+
+	                break;
+	            case 2:
+
+	                break;
+	            case 3:
+
+	                break;
+	            case 4:
+	            	
+	            case 5:
+	            	break;
+	            case 6:
+	            	break;
+	            case 7:
+	            	break;
+	            case 8:
+	            	break;
+	            default:
+	                System.out.print("Please enter a valid option");
+	                break;
+	            }//end of switch
+	            switch (option) {
+
+		        case 3:
+
+		            while (true) {
+
+		            	System.out.println("All Campus Resources\n");
+		            	//all campus resources from NodeLayer table
+		    	        }
+		            }
+
+	            switch (option) {
+
+		        case 4:
+
+		            while (true) {
+
+		            	System.out.println("All Campus Buildings\n" );
+		            	//all campus building from table NodeDescription table
+		    	        }
+		            }
+
+	            switch (option) {
+
+		        case 5:
+
+		            while (true) {
+
+		            	System.out.println("All Department Locations\n");
+		            	//all department locations from departmentLocation table
+		    	        }
+		            }
+	        //end of while loop
+	        }
+	            }
+
+	            }
+	            //end of while loop
+*/
+		//}
+    
+	  /*
+       EuclideanGraph G = new EuclideanGraph(graphin);
+        System.err.println("Done reading the graph " + args[0]);
+        System.err.println("Enter query pairs from stdin");
+
+         //read in the s-d pairs from standard input
+        Dijkstra dijkstra = new Dijkstra(G);
+        while(!StdIn.isEmpty()) {
+            int s = StdIn.readInt();
+            int d = StdIn.readInt();
+            dijkstra.showPath(s, d);
+            System.out.println();
+        }*/
+   // }
+
+	/*private static int getResponse() {
+		// TODO Auto-generated method stub
+		return Integer.parseInt(StdIn.readString());
+	}*/
+}
+   // }
+}

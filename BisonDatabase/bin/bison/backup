@@ -1,0 +1,55 @@
+try
+			{
+
+				System.out.println("Enter Starting Location (Building):\n");
+				int startingPoint= StdIn.readInt();
+				System.out.println("Enter Destination Location (Building):\n");
+				int endingPoint= StdIn.readInt();
+
+
+				//String buildingnameStart = StdIn.readString();
+				String q1= "SELECT \"SID\", \"DID\" FROM \"Graph\" WHERE \"Graph\".\"SID\" =" + startingPoint + "AND \"Graph\".\"DID\" ="+endingPoint;
+
+				EuclideanGraph G = new EuclideanGraph();
+
+				System.out.println(G);
+
+				// read in the s-d pairs from standard input
+				Dijkstra dijkstra = new Dijkstra(G);
+				//directions = dijkstra.showPath(startingPoint, endingPoint);
+				if( startingPoint >= G.getV() || endingPoint >= G.getV()){
+					System.out.println("Invalid Entry.");
+					System.out.printf("Please enter a point between 0 and 113", G.getV());
+				}
+				else{
+					dijkstra.showPath(startingPoint, endingPoint);
+					System.out.println("from  "+ startingPoint +"   To "+ endingPoint);
+
+					System.out.println("Distance to location:  " + dijkstra.distance(endingPoint, startingPoint)+ "Meters");
+				}
+				/*if(startingPoint - endingPoint > 0){
+				                System.out.print("(turn right)");
+				            } else if (startingPoint- endingPoint < 0){
+				                System.out.print("(turn left)");
+				            } else {
+				                System.out.print("(Cross the street)");
+				            }*/
+				// System.out.println(""+name);
+				/*}
+					else if (name != startingPoint)
+					{
+						System.out.println("Building Name is Not in Howard Campus, check spelling");
+					}
+					else if (name2 != endingPoint)
+					{
+						System.out.println("Building Name is Not in Howard Campus, check spelling");
+
+					}*/
+
+			}
+			catch (Exception e)
+			{
+				System.out.println(e);
+			}
+
+			break;
