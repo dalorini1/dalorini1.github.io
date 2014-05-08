@@ -86,7 +86,7 @@ public class BisonMaps {
 					dijkstra.showPath(endingPoint, startingPoint);
 					System.out.println("from  "+ startingPoint +"   To "+ endingPoint);
 
-					System.out.println("Distance to location:  " + dijkstra.distance(endingPoint, startingPoint)+ "  Meters");
+					System.out.println("Distance to location:  " + dijkstra.distance(endingPoint, startingPoint)+ "  Mins");
 				}
 				/*if(startingPoint - endingPoint > 0){
 				                System.out.print("(turn right)");
@@ -133,7 +133,7 @@ public class BisonMaps {
 
 				
 
-				String qatm= "SELECT \"NAME\", \"SID\" FROM \"NODEDESCRIPTION\" INNER JOIN \"NODELAYER\" ON  \"NODEDESCRIPTION\".\"SID\"=\"NODELAYER\".\"SID\" AND \"ATM\"= 1";
+				String qatm= "SELECT \"NAME\" FROM \"NODEDESCRIPTION\" INNER JOIN \"NODELAYER\" ON  \"NODEDESCRIPTION\".\"SID\"=\"NODELAYER\".\"SID\" AND \"ATM\"= 1";
 				//AND \"NODEDESCRIPTION\".\"NAME\"="+buildingname	
 				//String name = StdIn.readString("NAME");
 
@@ -145,17 +145,16 @@ public class BisonMaps {
 					//while(rsatm.next()) {
 					rsatm.next();
 						String name = rsatm.getString("NAME").trim();
-						String sid = rsatm.getString("SID");
 
 						System.out.println("Nearest ATM in this building  " + name);
-						int nameint= Integer.parseInt(name);
+						/*nt nameint= Integer.parseInt(name);
 						int buildingint= Integer.parseInt(buildingname);
 						EuclideanGraph G = new EuclideanGraph();
 						Dijkstra dijkstra = new Dijkstra(G);
 						dijkstra.showPath(buildingint, nameint);
 						System.out.println("from  "+ buildingint +"   To "+ nameint);
 
-						System.out.println("Distance to location:  " + dijkstra.distance(buildingint, nameint)+ "  Meters");
+						System.out.println("Distance to location:  " + dijkstra.distance(buildingint, nameint)+ "  Meters");*/
 					//}
 					
 				}
