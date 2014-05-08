@@ -67,17 +67,12 @@ public class BisonMaps {
 				System.out.println("Enter Destination Location (Building):\n");
 				int endingPoint= StdIn.readInt();
 
-
-				//String buildingnameStart = StdIn.readString();
-				//String q1= "SELECT \"SID\", \"DID\" FROM \"Graph\" WHERE \"Graph\".\"SID\" =" + startingPoint + "AND \"Graph\".\"DID\" ="+endingPoint;
-
 				EuclideanGraph G = new EuclideanGraph();
 
 				System.out.println(G);
 
 				// read in the s-d pairs from standard input
 				Dijkstra dijkstra = new Dijkstra(G);
-				//directions = dijkstra.showPath(startingPoint, endingPoint);
 				if( startingPoint >= G.getV() || endingPoint >= G.getV()){
 					System.out.println("Invalid Entry.");
 					System.out.printf("Please enter a point between 0 and 113", G.getV());
@@ -86,26 +81,8 @@ public class BisonMaps {
 					dijkstra.showPath(endingPoint, startingPoint);
 					System.out.println("from  "+ startingPoint +"   To "+ endingPoint);
 
-					System.out.println("Distance to location:  " + dijkstra.distance(endingPoint, startingPoint)+ "  Mins");
+					System.out.println("Distance to location:  " + dijkstra.distance(endingPoint, startingPoint)+ "  Meters");
 				}
-				/*if(startingPoint - endingPoint > 0){
-				                System.out.print("(turn right)");
-				            } else if (startingPoint- endingPoint < 0){
-				                System.out.print("(turn left)");
-				            } else {
-				                System.out.print("(Cross the street)");
-				            }*/
-				// System.out.println(""+name);
-				/*}
-					else if (name != startingPoint)
-					{
-						System.out.println("Building Name is Not in Howard Campus, check spelling");
-					}
-					else if (name2 != endingPoint)
-					{
-						System.out.println("Building Name is Not in Howard Campus, check spelling");
-
-					}*/
 
 			}
 			catch (Exception e)
@@ -131,11 +108,8 @@ public class BisonMaps {
 			if (option ==1)
 			{
 
-				
-
 				String qatm= "SELECT \"NAME\" FROM \"NODEDESCRIPTION\" INNER JOIN \"NODELAYER\" ON  \"NODEDESCRIPTION\".\"SID\"=\"NODELAYER\".\"SID\" AND \"ATM\"= 1";
-				//AND \"NODEDESCRIPTION\".\"NAME\"="+buildingname	
-				//String name = StdIn.readString("NAME");
+
 
 				try {
 					Statement stmtatm = conn.createStatement();
@@ -144,19 +118,11 @@ public class BisonMaps {
 
 					//while(rsatm.next()) {
 					rsatm.next();
-						String name = rsatm.getString("NAME").trim();
+					String name = rsatm.getString("NAME").trim();
 
-						System.out.println("Nearest ATM in this building  " + name);
-						/*nt nameint= Integer.parseInt(name);
-						int buildingint= Integer.parseInt(buildingname);
-						EuclideanGraph G = new EuclideanGraph();
-						Dijkstra dijkstra = new Dijkstra(G);
-						dijkstra.showPath(buildingint, nameint);
-						System.out.println("from  "+ buildingint +"   To "+ nameint);
+					System.out.println("Nearest ATM in this building  " + name);
 
-						System.out.println("Distance to location:  " + dijkstra.distance(buildingint, nameint)+ "  Meters");*/
-					//}
-					
+
 				}
 				catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -173,7 +139,6 @@ public class BisonMaps {
 
 					ResultSet rspp= stmtpp.executeQuery(qpp);  // return a result set
 
-					//while(rspp.next()) {
 					rspp.next();
 					String name = rspp.getString("NAME").trim();
 
@@ -190,30 +155,21 @@ public class BisonMaps {
 			}
 			if (option ==3)
 			{
-				String qwifi= "SELECT \"NAME\" FROM \"NODEDESCRIPTION\" INNER JOIN \"NODELAYER\" ON \"NODEDESCRIPTION\".\"SID\" = \"NODELAYER\".\"SID\" AND \"NODELAYER\".\"WiFi\" > 1 AND \"NODEDESCRIPTION\".\"NAME\" = ? ";
-				
-				try {
-					
+				String qwifi= "SELECT \"NAME\" FROM \"NODEDESCRIPTION\" WHERE  \"NODEDESCRIPTION\".\"NAME\" = ? ";
 
+				try {
 					PreparedStatement stmtwifi = conn.prepareStatement(qwifi);
-					stmtwifi.setString(1, buildingname);
-					stmtwifi.executeUpdate();
-					ResultSet rswifi= stmtwifi.executeQuery(qwifi);  // return a result set
-					
-                    //stmtwifi.executeUpdate();
-					//while(rswifi.next()) {
-					rswifi.next();
-					
-					String name = rswifi.getString("NAME").trim();
-					
+					Statement stmt = conn.createStatement();
+					stmtwifi.setString(1, buildingname);;
+					ResultSet rswifi= stmtwifi.executeQuery();  // return a result set
+
+					while(rswifi.next()){
+
+						String name = rswifi.getString("NAME").trim();
+
 						System.out.println("WiFi at : " + name);
-					/*}
-					else
-					{
-						System.out.println("enter a valid name");
 					}
-					//}
-*/				}
+				}
 
 				catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -232,25 +188,18 @@ public class BisonMaps {
 
 				try {
 					PreparedStatement stmtv = conn.prepareStatement(qv);
-					
 
-					ResultSet rsv= stmtv.executeQuery(qv);  // return a result set
 					stmtv.setString(1, buildingname);
-					stmtv.executeUpdate();
-					//while(rsv.next()) {
-					rsv.next();
-					String name = rsv.getString("NAME").trim();
-					/*if (name == buildingname)
-					{*/
+					Statement stmt =conn.createStatement();
+					ResultSet rsv= stmtv.executeQuery();  // return a result set
 
-						System.out.println("WiFi at : " + name);
-					/*}
-					else
-					{
-						System.out.println("enter a valid name");
-					}*/
+					while(rsv.next()) {
+
+						String name = rsv.getString("NAME").trim();
+
+						System.out.println("Vending Machine can be found inside : " + name);
+					}
 				}
-				//}
 
 				catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -264,26 +213,18 @@ public class BisonMaps {
 
 				try {
 					PreparedStatement stmtr = conn.prepareStatement(qr);
-					
 
-					ResultSet rsr= stmtr.executeQuery(qr);  // return a result set
 					stmtr.setString(1, buildingname);
-					stmtr.executeUpdate();
-					//while(rsv.next()) {
-					rsr.next();
-					String name = rsr.getString("NAME").trim();
-					/*if (name == buildingname)
-					{*/
+					Statement stmt = conn.createStatement();
+					ResultSet rsr= stmtr.executeQuery();  // return a result set
 
+					while(rsr.next()) {
+
+						String name = rsr.getString("NAME").trim();
 						System.out.println("Restroom Located inside this building  : " + name);
-					/*}
-					else
-					{
-						System.out.println("enter a valid name");
-					}*/
-				}
-				//}
+					}
 
+				}
 				catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -299,12 +240,11 @@ public class BisonMaps {
 
 					ResultSet rsbs= stmtbs.executeQuery(qbs);  // return a result set
 
-					//while(rsbs.next()) {
 					rsbs.next();
 					String name = rsbs.getString("NAME").trim();
 
 					System.out.println("Nearest Bus Stop : " + name);
-					//}
+
 				}
 
 				catch (SQLException e) {
@@ -313,28 +253,26 @@ public class BisonMaps {
 				}
 			}
 			if (option==8)
-			{
-				String qcom= "SELECT \"NAME\" FROM \"NODEDESCRIPTION\" WHERE \"NODEDESCRIPTION\".\"NAME\"="+buildingname;
+			{ 
+
+				String qcom= "SELECT \"NAME\" FROM \"NODEDESCRIPTION\" WHERE \"NODEDESCRIPTION\".\"NAME\"=?";
 
 				try {
-					Statement stmtcom = conn.createStatement();
+					PreparedStatement stmtcom = conn.prepareStatement(qcom);
 
-					ResultSet rscom= stmtcom.executeQuery(qcom);  // return a result set
+					stmtcom.setString(1, buildingname);
+					Statement stmt = conn.createStatement();
+					ResultSet rscom= stmtcom.executeQuery();  // return a result set
 
-					rscom.next();
-					
+					while(rscom.next())
+					{
+
 						String name = rscom.getString("NAME").trim();
-						if (buildingname == name)
-						{
-						
-							System.out.println("Nearest Computer Lab Located at : " + name);
-						}
-						else
-						{
-							System.out.println("enter a valid name");
-						}
+
+						System.out.println("Nearest Computer Lab Located inside this building : " + name);
 					}
-				
+				}
+
 				catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -372,10 +310,7 @@ public class BisonMaps {
 			System.out.println("All Campus Resources: ");
 			try
 			{
-				//SELECT "NAME", "ATM" "Vending", "RestRoom", "PublicPhone", "ComputerLab", "WiFi", "Security", "BusStop" FROM "NODELAYER" INNER JOIN "NODEDESCRIPTION" ON ("NODELAYER"."SID" = "NODEDESCRIPTION"."SID");
 				String query8 = "SELECT \"NAME\", \"ATM\", \"Vending\", \"RestRoom\", \"PublicPhone\", \"ComputerLab\", \"WiFi\", \"Security\", \"BusStop\" FROM \"NODELAYER\" INNER JOIN \"NODEDESCRIPTION\" ON (\"NODELAYER\".\"SID\"=\"NODEDESCRIPTION\".\"SID\") AND \"ATM\" > 0 OR \"Vending\" > 0 OR \"RestRoom\" > 0 OR \"PublicPhone\" > 0 OR \"ComputerLab\" > 0 OR \"WiFi\" > 0 OR \"Security\" > 0 OR \"BusStop\" > 0"; 
-				//String query8 = "SELECT * FROM \"NODEDESCRIPTION\" WHERE \"Type\" = 0"; 
-				//String query8=" Select * FROM \"NODELAYER\" WHERE \"ATM\" > 0 OR \"Vending\" > 0 OR \"RestRoom\" > 0 OR \"PublicPhone\" > 0 OR \"ComputerLab\" > 0 OR \"WiFi\" > 0 OR \"Security\" > 0 OR \"BusStop\" > 0";
 				Statement stmt8 = conn.createStatement();
 				ResultSet rs8 = stmt8.executeQuery(query8);  // return a result set
 
@@ -400,12 +335,10 @@ public class BisonMaps {
 			break;
 		case 5:
 			System.out.println("All Department Locations: ");
-			//select NAME, DepartmentName from NodeDescription INNERJOIN DepartmentLocation WHERE NodeDescription.SID = DepartmentLocation.SID;
 			try
 			{
 
 				String query9 = "SELECT \"NAME\", \"DepartmentName\" FROM \"NODEDESCRIPTION\" INNER JOIN \"DepartmentLocation\" ON (\"NODEDESCRIPTION\".\"SID\" = \"DepartmentLocation\".\"SID\")"; 
-				//Connection conn = DriverManager.getConnection(url,props);
 				Statement stmt9 = conn.createStatement();
 
 				ResultSet rs9 = stmt9.executeQuery(query9);  // return a result set
@@ -429,9 +362,6 @@ public class BisonMaps {
 
 		}
 	}
-	/*private static void Switch(int option) {
-		// TODO Auto-generated method stub
 
-	}*/
 }
 
