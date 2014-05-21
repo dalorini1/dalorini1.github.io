@@ -11,6 +11,7 @@ import java.util.Properties;
 
 
 /*************************************************************************
+ * Dema Alorini
  * displays options and reads result from database
  *  
  *
